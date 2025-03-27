@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Affirmation Transitions</title>
+  <style>
+    /* Reset and basic container styling */
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
+    #display {
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+    /* Emphasize the last three sentences */
+    .emphasize {
+      font-weight: bold;
+      color: #d9534f;
+      font-size: 2.5em;
+    }
+    /* Generic fade-out for exit transitions */
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to   { opacity: 0; }
+    }
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    
+    /* --- 38 unique entrance animations --- */
+    @keyframes anim1 { from { opacity: 0; } to { opacity: 1; } }
+    .anim1 { animation: anim1 0.8s forwards; font-size: 2em; }
+
+    @keyframes anim2 { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .anim2 { animation: anim2 0.8s forwards; }
+
+    @keyframes anim3 { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .anim3 { animation: anim3 0.8s forwards; }
+
+    @keyframes anim4 { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .anim4 { animation: anim4 0.8s forwards; }
+
+    @keyframes anim5 { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .anim5 { animation: anim5 0.8s forwards; }
+
+    @keyframes anim6 { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .anim6 { animation: anim6 0.8s forwards; }
+
+    @keyframes anim7 { from { transform: rotate(90deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
+    .anim7 { animation: anim7 0.8s forwards; }
+
+    @keyframes anim8 { from { transform: skewX(45deg); opacity: 0; } to { transform: skewX(0deg); opacity: 1; } }
+    .anim8 { animation: anim8 0.8s forwards; }
+
+    @keyframes anim9 {
+      0% { opacity: 0; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .anim9 { animation: anim9 0.8s forwards; }
+
+    @keyframes anim10 {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .anim10 { animation: anim10 0.8s forwards; }
+
+    @keyframes anim11 {
+      from { transform: translate(-100%, -100%); opacity: 0; }
+      to { transform: translate(0, 0); opacity: 1; }
+    }
+    .anim11 { animation: anim11 0.8s forwards; }
+
+    @keyframes anim12 {
+      from { transform: translate(100%, -100%); opacity: 0; }
+      to { transform: translate(0, 0); opacity: 1; }
+    }
+    .anim12 { animation: anim12 0.8s forwards; }
+
+    @keyframes anim13 {
+      from { transform: translate(-100%, 100%); opacity: 0; }
+      to { transform: translate(0, 0); opacity: 1; }
+    }
+    .anim13 { animation: anim13 0.8s forwards; }
+
+    @keyframes anim14 {
+      from { transform: translate(100%, 100%); opacity: 0; }
+      to { transform: translate(0, 0); opacity: 1; }
+    }
+    .anim14 { animation: anim14 0.8s forwards; }
+
+    @keyframes anim15 { 
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim15 { animation: anim15 0.8s forwards; }
+
+    @keyframes anim16 {
+      from { transform: translateX(-100%) rotate(-45deg); opacity: 0; }
+      to { transform: translateX(0) rotate(0deg); opacity: 1; }
+    }
+    .anim16 { animation: anim16 0.8s forwards; }
+
+    @keyframes anim17 {
+      from { transform: translateX(-100%) scale(0.5); opacity: 0; }
+      to { transform: translateX(0) scale(1); opacity: 1; }
+    }
+    .anim17 { animation: anim17 0.8s forwards; }
+
+    @keyframes anim18 {
+      from { transform: translateX(100%) scale(0.5); opacity: 0; }
+      to { transform: translateX(0) scale(1); opacity: 1; }
+    }
+    .anim18 { animation: anim18 0.8s forwards; }
+
+    @keyframes anim19 {
+      from { letter-spacing: 10px; opacity: 0; }
+      to { letter-spacing: normal; opacity: 1; }
+    }
+    .anim19 { animation: anim19 0.8s forwards; }
+
+    @keyframes anim20 {
+      from { filter: brightness(0.5); opacity: 0; }
+      to { filter: brightness(1); opacity: 1; }
+    }
+    .anim20 { animation: anim20 0.8s forwards; }
+
+    @keyframes anim21 {
+      from { filter: blur(5px); opacity: 0; }
+      to { filter: blur(0); opacity: 1; }
+    }
+    .anim21 { animation: anim21 0.8s forwards; }
+
+    @keyframes anim22 {
+      from { transform: rotate(-360deg); opacity: 0; }
+      to { transform: rotate(0deg); opacity: 1; }
+    }
+    .anim22 { animation: anim22 0.8s forwards; }
+
+    @keyframes anim23 {
+      from { transform: translateX(-50%) rotate(-30deg); opacity: 0; }
+      to { transform: translateX(0) rotate(0deg); opacity: 1; }
+    }
+    .anim23 { animation: anim23 0.8s forwards; }
+
+    @keyframes anim24 {
+      0% { transform: translateY(100%); opacity: 0; }
+      60% { transform: translateY(-10px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .anim24 { animation: anim24 0.8s forwards; }
+
+    @keyframes anim25 {
+      0% { transform: scale(0.8); opacity: 0; }
+      120% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .anim25 { animation: anim25 0.8s forwards; }
+
+    @keyframes anim26 {
+      0% { transform: translateX(-100%); opacity: 0; }
+      80% { transform: translateX(10%); opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    .anim26 { animation: anim26 0.8s forwards; }
+
+    @keyframes anim27 {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .anim27 { animation: anim27 0.8s forwards; }
+
+    @keyframes anim28 {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .anim28 { animation: anim28 0.8s forwards; }
+
+    @keyframes anim29 {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .anim29 { animation: anim29 0.8s forwards; }
+
+    @keyframes anim30 {
+      0% { transform: translateY(100%); opacity: 0; }
+      60% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .anim30 { animation: anim30 0.8s forwards; }
+
+    @keyframes anim31 {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(3deg); }
+      100% { transform: rotate(0deg); opacity: 1; }
+    }
+    .anim31 { animation: anim31 0.8s forwards; }
+
+    @keyframes anim32 {
+      from { transform: rotate(-10deg) translateX(-100%); opacity: 0; }
+      to { transform: rotate(0deg) translateX(0); opacity: 1; }
+    }
+    .anim32 { animation: anim32 0.8s forwards; }
+
+    @keyframes anim33 {
+      from { color: gray; opacity: 0; }
+      to { color: black; opacity: 1; }
+    }
+    .anim33 { animation: anim33 0.8s forwards; }
+
+    @keyframes anim34 {
+      from { transform: scale(0.8) translateY(50%); opacity: 0; }
+      to { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    .anim34 { animation: anim34 0.8s forwards; }
+
+    @keyframes anim35 {
+      0% { transform: translateY(10px); opacity: 0; }
+      50% { transform: translateY(-10px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .anim35 { animation: anim35 0.8s forwards; }
+
+    @keyframes anim36 {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .anim36 { animation: anim36 0.8s forwards; }
+
+    @keyframes anim37 {
+      from { transform: scale(0.5) rotate(0deg); opacity: 0; }
+      50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .anim37 { animation: anim37 0.8s forwards; }
+
+    @keyframes anim38 {
+      from { transform: translateX(100%) rotate(45deg); opacity: 0; }
+      to { transform: translateX(0) rotate(0deg); opacity: 1; }
+    }
+    .anim38 { animation: anim38 0.8s forwards; }
+  </style>
+</head>
+<body>
+  <div id="display"></div>
+  <script>
+    // List of 38 affirmation sentences
+    const sentences = [
+      "You are loveable",
+      "You are the best",
+      "You are kind",
+      "You are smart",
+      "You are pretty",
+      "You are the best cook",
+      "You are the best teacher",
+      "You are admirable",
+      "You are creative",
+      "You are energetic",
+      "You are cool",
+      "You are chill",
+      "You are understanding",
+      "You are good at listening",
+      "You are funny",
+      "You are generous",
+      "You are hardworking",
+      "You are logical",
+      "You are helpful",
+      "You are patient",
+      "You are fabulous",
+      "You are responsible",
+      "You are unique",
+      "You are fearless",
+      "You are passionate",
+      "You are thoughtful",
+      "You are confident",
+      "You are flexible",
+      "You are honest",
+      "You are organized",
+      "You are merry",
+      "You are fancy",
+      "You are optimistic",
+      "You are sympathetic",
+      "You are empathetic",
+      "We ❤️ 🫵",
+      "You’re the 🥇 👩",
+      "Have the 🎉 🎁 🥳 ever!"
+    ];
+    // Matching array of unique animation classes for each sentence
+    const animClasses = [
+      "anim1", "anim2", "anim3", "anim4", "anim5", "anim6", "anim7", "anim8",
+      "anim9", "anim10", "anim11", "anim12", "anim13", "anim14", "anim15",
+      "anim16", "anim17", "anim18", "anim19", "anim20", "anim21", "anim22",
+      "anim23", "anim24", "anim25", "anim26", "anim27", "anim28", "anim29",
+      "anim30", "anim31", "anim32", "anim33", "anim34", "anim35", "anim36",
+      "anim37", "anim38"
+    ];
+    
+    let current = 0;
+    const display = document.getElementById("display");
+
+    // Function to display a sentence with its entrance animation.
+    function showSentence(index) {
+      // Reset any animation classes
+      display.className = "";
+      // Set text; if this is one of the last three, add emphasis.
+      display.textContent = sentences[index];
+      if(index >= sentences.length - 3) {
+        display.classList.add("emphasize");
+      }
+      // Add the unique entrance animation class.
+      display.classList.add(animClasses[index]);
+    }
+    
+    // Display the first sentence on load.
+    showSentence(current);
+    display.style.opacity = 1;
+
+    // Listen for mouse wheel events to simulate “scrolling”
+    window.addEventListener("wheel", function(e) {
+      // Scroll down to go to next sentence.
+      if(e.deltaY > 0) { 
+        if(current < sentences.length - 1) {
+          display.classList.add("fade-out");
+          setTimeout(() => {
+            current++;
+            showSentence(current);
+          }, 500); // fade-out duration
+        }
+      // Scroll up to go to previous sentence.
+      } else if(e.deltaY < 0) { 
+        if(current > 0) {
+          display.classList.add("fade-out");
+          setTimeout(() => {
+            current--;
+            showSentence(current);
+          }, 500);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
