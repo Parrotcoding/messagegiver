@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Apple Style Unique Affirmations</title>
+  <title>Apple Style Affirmations</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic reset & Apple-like styling */
+    /* Basic Reset and Apple-like styling */
     * {
       margin: 0;
       padding: 0;
@@ -15,199 +17,110 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: #fff;
       color: #333;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
+      transition: background-color 0.8s ease;
     }
-    /* Each section fills the viewport and snaps into place */
+    /* Each section takes full viewport height and snaps in place */
     section {
       height: 100vh;
-      scroll-snap-align: start;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2em;
+      scroll-snap-align: start;
       opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    /* Emphasis style for the last three sentences */
+    /* When a section is in view, it animates into place */
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Emphasis for the last three sentences */
     .emphasize {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.5em;
       font-weight: bold;
       color: #d9534f;
     }
-    
-    /* When a section is active, trigger its unique animation */
-    section.active.anim1 { animation: anim1 0.8s forwards; }
-    section.active.anim2 { animation: anim2 0.8s forwards; }
-    section.active.anim3 { animation: anim3 0.8s forwards; }
-    section.active.anim4 { animation: anim4 0.8s forwards; }
-    section.active.anim5 { animation: anim5 0.8s forwards; }
-    section.active.anim6 { animation: anim6 0.8s forwards; }
-    section.active.anim7 { animation: anim7 0.8s forwards; }
-    section.active.anim8 { animation: anim8 0.8s forwards; }
-    section.active.anim9 { animation: anim9 0.8s forwards; }
-    section.active.anim10 { animation: anim10 0.8s forwards; }
-    section.active.anim11 { animation: anim11 0.8s forwards; }
-    section.active.anim12 { animation: anim12 0.8s forwards; }
-    section.active.anim13 { animation: anim13 0.8s forwards; }
-    section.active.anim14 { animation: anim14 0.8s forwards; }
-    section.active.anim15 { animation: anim15 0.8s forwards; }
-    section.active.anim16 { animation: anim16 0.8s forwards; }
-    section.active.anim17 { animation: anim17 0.8s forwards; }
-    section.active.anim18 { animation: anim18 0.8s forwards; }
-    section.active.anim19 { animation: anim19 0.8s forwards; }
-    section.active.anim20 { animation: anim20 0.8s forwards; }
-    section.active.anim21 { animation: anim21 0.8s forwards; }
-    section.active.anim22 { animation: anim22 0.8s forwards; }
-    section.active.anim23 { animation: anim23 0.8s forwards; }
-    section.active.anim24 { animation: anim24 0.8s forwards; }
-    section.active.anim25 { animation: anim25 0.8s forwards; }
-    section.active.anim26 { animation: anim26 0.8s forwards; }
-    section.active.anim27 { animation: anim27 0.8s forwards; }
-    section.active.anim28 { animation: anim28 0.8s forwards; }
-    section.active.anim29 { animation: anim29 0.8s forwards; }
-    section.active.anim30 { animation: anim30 0.8s forwards; }
-    section.active.anim31 { animation: anim31 0.8s forwards; }
-    section.active.anim32 { animation: anim32 0.8s forwards; }
-    section.active.anim33 { animation: anim33 0.8s forwards; }
-    section.active.anim34 { animation: anim34 0.8s forwards; }
-    section.active.anim35 { animation: anim35 0.8s forwards; }
-    section.active.anim36 { animation: anim36 0.8s forwards; }
-    section.active.anim37 { animation: anim37 0.8s forwards; }
-    section.active.anim38 { animation: anim38 0.8s forwards; }
-    
-    /* 38 Unique Keyframe Animations */
-    @keyframes anim1 { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes anim2 { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    @keyframes anim3 { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    @keyframes anim4 { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes anim5 { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes anim6 { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    @keyframes anim7 { from { transform: rotate(90deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
-    @keyframes anim8 { from { transform: skewX(45deg); opacity: 0; } to { transform: skewX(0deg); opacity: 1; } }
-    @keyframes anim9 { 
-      0% { opacity: 0; transform: translateY(0); } 
-      50% { opacity: 1; transform: translateY(-20px); } 
-      100% { opacity: 1; transform: translateY(0); } 
-    }
-    @keyframes anim10 { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-    @keyframes anim11 { from { transform: translate(-100%, -100%); opacity: 0; } to { transform: translate(0, 0); opacity: 1; } }
-    @keyframes anim12 { from { transform: translate(100%, -100%); opacity: 0; } to { transform: translate(0, 0); opacity: 1; } }
-    @keyframes anim13 { from { transform: translate(-100%, 100%); opacity: 0; } to { transform: translate(0, 0); opacity: 1; } }
-    @keyframes anim14 { from { transform: translate(100%, 100%); opacity: 0; } to { transform: translate(0, 0); opacity: 1; } }
-    @keyframes anim15 { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes anim16 { from { transform: translateX(-100%) rotate(-45deg); opacity: 0; } to { transform: translateX(0) rotate(0deg); opacity: 1; } }
-    @keyframes anim17 { from { transform: translateX(-100%) scale(0.5); opacity: 0; } to { transform: translateX(0) scale(1); opacity: 1; } }
-    @keyframes anim18 { from { transform: translateX(100%) scale(0.5); opacity: 0; } to { transform: translateX(0) scale(1); opacity: 1; } }
-    @keyframes anim19 { from { letter-spacing: 10px; opacity: 0; } to { letter-spacing: normal; opacity: 1; } }
-    @keyframes anim20 { from { filter: brightness(0.5); opacity: 0; } to { filter: brightness(1); opacity: 1; } }
-    @keyframes anim21 { from { filter: blur(5px); opacity: 0; } to { filter: blur(0); opacity: 1; } }
-    @keyframes anim22 { from { transform: rotate(-360deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
-    @keyframes anim23 { from { transform: translateX(-50%) rotate(-30deg); opacity: 0; } to { transform: translateX(0) rotate(0deg); opacity: 1; } }
-    @keyframes anim24 { 
-      0% { transform: translateY(100%); opacity: 0; } 
-      60% { transform: translateY(-10px); opacity: 1; } 
-      100% { transform: translateY(0); opacity: 1; } 
-    }
-    @keyframes anim25 { 
-      0% { transform: scale(0.8); opacity: 0; } 
-      70% { transform: scale(1.1); opacity: 1; } 
-      100% { transform: scale(1); opacity: 1; } 
-    }
-    @keyframes anim26 { 
-      0% { transform: translateX(-100%); opacity: 0; } 
-      80% { transform: translateX(10%); opacity: 1; } 
-      100% { transform: translateX(0); opacity: 1; } 
-    }
-    @keyframes anim27 { 
-      0% { opacity: 0; } 
-      50% { opacity: 1; } 
-      100% { opacity: 1; } 
-    }
-    @keyframes anim28 { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes anim29 { 
-      0% { transform: scale(0); opacity: 0; } 
-      50% { transform: scale(1.2); opacity: 1; } 
-      100% { transform: scale(1); opacity: 1; } 
-    }
-    @keyframes anim30 { 
-      0% { transform: translateY(100%); opacity: 0; } 
-      60% { transform: translateY(-20px); opacity: 1; } 
-      100% { transform: translateY(0); opacity: 1; } 
-    }
-    @keyframes anim31 { 
-      0% { transform: rotate(0deg); } 
-      25% { transform: rotate(5deg); } 
-      50% { transform: rotate(-5deg); } 
-      75% { transform: rotate(3deg); } 
-      100% { transform: rotate(0deg); opacity: 1; } 
-    }
-    @keyframes anim32 { from { transform: rotate(-10deg) translateX(-100%); opacity: 0; } to { transform: rotate(0deg) translateX(0); opacity: 1; } }
-    @keyframes anim33 { from { color: gray; opacity: 0; } to { color: black; opacity: 1; } }
-    @keyframes anim34 { from { transform: scale(0.8) translateY(50%); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
-    @keyframes anim35 { 
-      0% { transform: translateY(10px); opacity: 0; } 
-      50% { transform: translateY(-10px); opacity: 1; } 
-      100% { transform: translateY(0); opacity: 1; } 
-    }
-    @keyframes anim36 { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes anim37 { 
-      from { transform: scale(0.5) rotate(0deg); opacity: 0; } 
-      50% { transform: scale(1.2) rotate(15deg); opacity: 1; } 
-      100% { transform: scale(1) rotate(0deg); opacity: 1; } 
-    }
-    @keyframes anim38 { from { transform: translateX(100%) rotate(45deg); opacity: 0; } to { transform: translateX(0) rotate(0deg); opacity: 1; } }
   </style>
 </head>
 <body>
-  <section class="anim1">You are loveable</section>
-  <section class="anim2">You are the best</section>
-  <section class="anim3">You are kind</section>
-  <section class="anim4">You are smart</section>
-  <section class="anim5">You are pretty</section>
-  <section class="anim6">You are the best cook</section>
-  <section class="anim7">You are the best teacher</section>
-  <section class="anim8">You are admirable</section>
-  <section class="anim9">You are creative</section>
-  <section class="anim10">You are energetic</section>
-  <section class="anim11">You are cool</section>
-  <section class="anim12">You are chill</section>
-  <section class="anim13">You are understanding</section>
-  <section class="anim14">You are good at listening</section>
-  <section class="anim15">You are funny</section>
-  <section class="anim16">You are generous</section>
-  <section class="anim17">You are hardworking</section>
-  <section class="anim18">You are logical</section>
-  <section class="anim19">You are helpful</section>
-  <section class="anim20">You are patient</section>
-  <section class="anim21">You are fabulous</section>
-  <section class="anim22">You are responsible</section>
-  <section class="anim23">You are unique</section>
-  <section class="anim24">You are fearless</section>
-  <section class="anim25">You are passionate</section>
-  <section class="anim26">You are thoughtful</section>
-  <section class="anim27">You are confident</section>
-  <section class="anim28">You are flexible</section>
-  <section class="anim29">You are honest</section>
-  <section class="anim30">You are organized</section>
-  <section class="anim31">You are merry</section>
-  <section class="anim32">You are fancy</section>
-  <section class="anim33">You are optimistic</section>
-  <section class="anim34">You are sympathetic</section>
-  <section class="anim35">You are empathetic</section>
-  <section class="anim36 emphasize">We ❤️ 🫵</section>
-  <section class="anim37 emphasize">You’re the 🥇 👩</section>
-  <section class="anim38 emphasize">Have the 🎉 🎁 🥳 ever!</section>
+  <!-- Sections without background change -->
+  <section>You are loveable</section>
+  <section>You are the best</section>
+  <section>You are kind</section>
+  <section>You are smart</section>
+  <!-- 5th section: dark background -->
+  <section class="dark-bg">You are pretty</section>
   
+  <section>You are the best cook</section>
+  <section>You are the best teacher</section>
+  <section>You are admirable</section>
+  <section>You are creative</section>
+  <!-- 10th section: dark background -->
+  <section class="dark-bg">You are energetic</section>
+  
+  <section>You are cool</section>
+  <section>You are chill</section>
+  <section>You are understanding</section>
+  <section>You are good at listening</section>
+  <!-- 15th section: dark background -->
+  <section class="dark-bg">You are funny</section>
+  
+  <section>You are generous</section>
+  <section>You are hardworking</section>
+  <section>You are logical</section>
+  <section>You are helpful</section>
+  <!-- 20th section: dark background -->
+  <section class="dark-bg">You are patient</section>
+  
+  <section>You are fabulous</section>
+  <section>You are responsible</section>
+  <section>You are unique</section>
+  <section>You are fearless</section>
+  <!-- 25th section: dark background -->
+  <section class="dark-bg">You are passionate</section>
+  
+  <section>You are thoughtful</section>
+  <section>You are confident</section>
+  <section>You are flexible</section>
+  <section>You are honest</section>
+  <!-- 30th section: dark background -->
+  <section class="dark-bg">You are organized</section>
+  
+  <section>You are merry</section>
+  <section>You are fancy</section>
+  <section>You are optimistic</section>
+  <section>You are sympathetic</section>
+  <!-- 35th section: dark background -->
+  <section class="dark-bg">You are empathetic</section>
+  
+  <!-- Emphasized final three sentences -->
+  <section class="emphasize">We ❤️ 🫵</section>
+  <section class="emphasize">You’re the 🥇 👩</section>
+  <section class="emphasize">Have the 🎉 🎁 🥳 ever!</section>
+
   <script>
-    // IntersectionObserver: add "active" class when a section is in view.
+    // IntersectionObserver: add "active" class when a section comes into view.
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          // If the section has the dark-bg class, change the body background to black; else, white.
+          if(entry.target.classList.contains('dark-bg')) {
+            document.body.style.backgroundColor = '#000';
+            document.body.style.color = '#fff';
+          } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#333';
+          }
         } else {
           entry.target.classList.remove('active');
         }
