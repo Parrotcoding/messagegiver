@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Apple Style Affirmations</title>
-  <!-- Load Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Load Google Fonts: Poppins for white background and Loved by the King for dark background -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Loved+by+the+King&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset and Apple-like styling */
     * {
@@ -17,12 +17,12 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #fff;
       color: #333;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
-      transition: background-color 0.8s ease;
+      transition: background-color 0.8s ease, color 0.8s ease;
     }
     /* Each section takes full viewport height and snaps in place */
     section {
@@ -41,12 +41,15 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Emphasis for the last three sentences */
+    /* Emphasis for the final three sentences */
     .emphasize {
-      font-family: 'Montserrat', sans-serif;
       font-size: 2.5em;
       font-weight: bold;
       color: #d9534f;
+    }
+    /* Dark background sections use the "Loved by the King" font */
+    section.dark-bg {
+      font-family: 'Loved by the King', cursive;
     }
   </style>
 </head>
@@ -101,7 +104,7 @@
   <!-- 35th section: dark background -->
   <section class="dark-bg">You are empathetic</section>
   
-  <!-- Emphasized final three sentences -->
+  <!-- Emphasized final three sentences (remain on white background) -->
   <section class="emphasize">We ❤️ 🫵</section>
   <section class="emphasize">You’re the 🥇 👩</section>
   <section class="emphasize">Have the 🎉 🎁 🥳 ever!</section>
@@ -113,7 +116,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // If the section has the dark-bg class, change the body background to black; else, white.
+          // If the section has the dark-bg class, change the body background to black and text color to white.
           if(entry.target.classList.contains('dark-bg')) {
             document.body.style.backgroundColor = '#000';
             document.body.style.color = '#fff';
